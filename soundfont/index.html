@@ -1,0 +1,654 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>FreePats project - Acoustic Grand Piano</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<style>
+#header {
+	position: relative;
+	z-index: -1;
+	background-color: #d0d0d0;
+	background-image: url("/piano-keyboard.png");
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: 370px 0;
+	color: #404040;
+}
+#logo {
+	font-family: serif;
+	font-size: 90px;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0;
+	padding: 40px 50px 40px 100px;
+	text-shadow: 2px 2px 0 white, 20px 30px 5px #a0a0a0;
+}
+#logoSubtitle {
+	padding: 0 0 60px 100px;
+	margin: 0;
+	text-shadow: 0 0 5px #606060;
+	font-variant: small-caps;
+	font-style: normal;
+	font-size: 18px;
+}
+#logoSubtitle strong {
+	font-weight: bold;
+	font-style: normal;
+}
+nav {
+	display: block;
+	background-color: #303030;
+	box-shadow: 0 0 3px 3px black;
+	color: white;
+	font-weight: bold;
+	padding: 0.4em 0 0.4em 100px;
+	top: 0;
+}
+nav ul {
+	list-style-type: none;
+}
+nav ul li {
+	display: inline-block;
+	padding: 0.4em 0;
+	margin: 0 4em 0 0;
+}
+nav a,
+nav a:visited {
+	color: #80ff60;
+	text-decoration: none;
+	font-weight: bold;
+}
+body {
+	background-color: #f0f0f0;
+	color: black;
+	font-family: sans-serif;
+	margin: 0;
+}
+a,
+a:visited {
+	color: #00a000;
+	text-decoration: none;
+	font-weight: bold;
+	outline: none;
+}
+h2 {
+	background-color: #303030;
+	box-shadow: 0 0 3px 3px black;
+	color: white;
+	font-size: x-large;
+	font-weight: bold;
+	padding: 0.9em 2em;
+	margin: 0 0 1em 0;
+	text-align: center;
+}
+h3 {
+	border-bottom: 3px dotted #d0d0d0;
+	font-size: large;
+	font-weight: bold;
+	text-shadow: 0.1em 0.1em 0.25em #808080;
+	margin: 5em 0 1em 0;
+	padding: 0 0 0.5em 0;
+}
+h4 {
+	font-size: large;
+	font-weight: bold;
+	padding: 0;
+	margin: 1.5em 0 0.7em 0;
+}
+.article h3 {
+	clear: both;
+}
+h3:first-of-type {
+	margin: 3em 0 1em 0;
+}
+p {
+	margin: 1em 0;
+	padding: 0;
+}
+.pageContent {
+	text-align: center;
+	margin: 0 auto 30px auto;
+}
+.article {
+	display: block;
+	text-align: left;
+	max-width: 60em;
+	min-width: 15em;
+	margin: 0 auto 60px auto;
+	padding: 0 2em;
+}
+.article img {
+	clear: right;
+	float: right;
+	margin: 0 0 1.2em 2em;
+	max-width: 35%;
+}
+.article .link {
+	border-left: 0.5em solid #c0c0c0;
+	clear: both;
+	padding: 0 0 0 1em;
+}
+.article .link img {
+	width: 20em;
+	max-width: 50%;
+	box-shadow: 0 0 7px black;
+}
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	flex-shrink: 0;
+	flex: 0 0 auto;
+	max-width: 60em;
+	margin: 0 auto 0 auto;
+	white-space: nowrap;
+}
+.gallery div {
+	flex-shrink: 0;
+	flex: 0 0 auto;
+	background-color: white;
+	color: black;
+	text-align: left;
+	margin: 1.2em 2.5em 1.2em 0;
+	padding: 0 2em 1em 2em;
+	min-width: 20em;
+	box-shadow: 0 0 6px 1px #808080;
+}
+.gallery img {
+	display: block;
+	float: none;
+	width: auto;
+	max-width: auto;
+	margin: 0.5em 0 0.1em 0;
+}
+blockquote {
+	border-left: 0.5em solid #c0c0c0;
+	color: #707070;
+	margin: 1.8em 0 1.8em 0;
+	padding: 0 0 0 1em;
+	font-size: 92%;
+	font-style: italic;
+}
+.mainIndex {
+	display: flex;
+	flex-wrap: wrap;
+	flex-shrink: 0;
+	flex: 0 0 auto;
+	justify-content: center;
+	white-space: nowrap;
+}
+.mainIndex > div {
+	flex-shrink: 0;
+	flex: 0 0 auto;
+	background-color: #606060;
+	color: white;
+	text-align: left;
+	margin: 1.2em;
+	min-width: 20em;
+	box-shadow: 0 0 6px 2px black;
+}
+.mainIndex h3 {
+	border-style: none;
+	background-color: #303030;
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 0.4em 20px;
+	margin: 0;
+	text-shadow: none;
+}
+.mainIndex p {
+	color: #d0d0d0;
+	padding: 0;
+	margin: 0.8em 20px;
+}
+.mainIndex a,
+.mainIndex a:visited {
+	color: #80ff60;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0.1em 0.1em 0.2em #202020;
+}
+.mainIndex .number {
+	color: #606060;
+	font-style: italic;
+}
+table.download {
+	border-style: none;
+	border-collapse: collapse;
+	margin: 3em 0 0 0;
+}
+table.download th {
+	color: white;
+	background-color: #303030;
+	padding: 0.4em 1em;
+	border-right: 5px solid #f0f0f0;
+	border-bottom: 5px solid #f0f0f0;
+}
+table.download td {
+	padding: 5px 1em 0 1em;
+	border-right: 5px solid #f0f0f0;
+	white-space: nowrap;
+}
+table.download td:nth-of-type(4) {
+	white-space: normal;
+}
+.remarks {
+	color: #606060;
+	font-style: italic;
+	font-size: small;
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+.remarks p {
+	margin: 0.1em 0;
+}
+#footer {
+	background-color: #303030;
+	box-shadow: 0 0 3px 3px black;
+	clear: both;
+	color: #707070;
+	font-weight: bold;
+	padding: 20px 50px 2em 50px;
+	margin: 80px 0 0 0;
+	text-align: center;
+	min-height: 160px;
+}
+#footer p {
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+#footer a,
+#footer a:visited {
+	color: #80ff60;
+	text-decoration: none;
+	font-weight: bold;
+}
+.imageContainer,
+.videoContainer {
+	display: block;
+	background-color: #303030;
+	float: right;
+	max-width: 48%;
+	margin: 0 0 2em 2em;
+	box-shadow: 0 0 7px black;
+}
+.imageContainer img,
+.videoContainer video {
+	display: block;
+	float: none;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+}
+.tooltip {
+	display: block;
+	font-size: small;
+	color: white;
+	padding: 0.5em 2em;
+	background-color: black;
+}
+.tooltip a,
+.tooltip a:visited {
+	color: #80ff60;
+}
+ul li {
+	margin-left: 3em;
+}
+ol.instrumentList {
+	list-style-type: none;
+	counter-reset: instrument-list-counter;
+	padding-left: 0;
+	margin-top: 1em;
+}
+ol.instrumentList li {
+	padding: 0.25em 0;
+	font-weight: normal;
+}
+ol.instrumentList li:before {
+	padding: 0.2em 1em;
+	margin-right: 1em;
+	counter-increment: instrument-list-counter;
+	content: counter(instrument-list-counter, decimal-leading-zero);
+	font-size: small;
+	font-weight: bold;
+	background-color: #d0d0d0;
+}
+ol.instrumentList a {
+	color: black;
+	font-weight: normal;
+}
+.formatSFZ,
+.formatSF2,
+.formatH2,
+.formatDG,
+.formatFLAC,
+.formatWAV {
+	color: black;
+	border: 2px solid #404040;
+	display: inline-block;
+	padding: 2px 4px;
+	min-width: 60px;
+	margin: 1px;
+	text-align: center;
+	font-size: small;
+	font-weight: bold;
+}
+.formatSFZ {
+	background-color: #cfe679;
+	border-color: #90a000;
+}
+.formatSF2 {
+	background-color: #faafaf;
+	border-color: #d05858;
+}
+.formatWAV {
+	background-color: #f7e18c;
+	border-color: #f0a040;
+}
+.formatFLAC {
+	background-color: #ffca98;
+	border-color: #f08000;
+}
+.formatH2 {
+	background-color: #b7eaf7;
+	border-color: #40b0f0;
+}
+.formatDG {
+	background-color: #d0dbff;
+	border-color: #7090f0;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@media screen and (max-width: 45em) {
+	.article img,
+	.article .link img {
+		display: block;
+		float: none;
+		margin: 0 auto 1em auto;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 55em) {
+	nav {
+		padding-left: 10px;
+	}
+	#header {
+		background-position: 75px 0;
+	}
+	#logo {
+		padding-left: 10px;
+		font-size: 60px;
+	}
+	#logoSubtitle {
+		padding-left: 10px;
+	}
+	.imageContainer {
+		display: block;
+		float: none;
+		margin: 0 auto 1em auto;
+		max-width: 100%;
+	}
+	.imageContainer img {
+		margin: 0 auto 0 auto;
+		max-width: 100%;
+	}
+	.videoContainer {
+		max-width: 100%;
+	}
+	table.download {
+		display: block;
+	}
+	table.download th {
+		display: none;
+	}
+	table.download tr {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0 0 1em 0;
+	}
+	table.download td {
+		display: block;
+		white-space: nowrap;
+		padding: 0 1em 0.2em 0;
+		font-size: 90%;
+		width: 100%;
+	}
+	table.download td:before {
+		display: inline-block;
+		color: white;
+		font-weight: bold;
+		background-color: #303030;
+		padding: 0.4em 1em;
+		margin: 0 0.5em 0 0;
+		min-width: 7em;
+	}
+	table.download td:nth-of-type(1):before {
+		content: "Download ";
+	}
+	table.download td:nth-of-type(2):before {
+		content: "Format ";
+	}
+	table.download td:nth-of-type(3):before {
+		content: "Size ";
+	}
+	table.download td:nth-of-type(4) {
+		padding-left: 9.5em;
+		text-indent: -9.5em;
+		white-space: normal;
+	}
+	table.download td:nth-of-type(4):before {
+		content: "Comments ";
+		text-indent: 0;
+		padding-left: 1em;
+	}
+}
+</style>
+</head>
+
+<body>
+<nav>
+<ul>
+	<li><a href="/about.html">About FreePats</a></li>
+	<li><a href="/index.html">Sound banks</a></li>
+	<li><a href="https://github.com/freepats/documentation/wiki">Documentation</a></li>
+	<li><a href="/links.html">Links</a></li>
+</ul>
+</nav>
+<div id="header">
+<h1 id="logo">FreePats</h1>
+<p id="logoSubtitle">Keep your ears <strong>open</strong></p>
+</div>
+
+<h2>Acoustic Grand Piano</h2>
+
+<div class="pageContent">
+
+
+<div class="article">
+
+<h3 id="UprightKW">Upright Piano KW</h3>
+
+<div class="imageContainer">
+<img src="UprightPianoKW/photo.jpg" />
+</div>
+
+<div class="remarks">
+<p>Version 2022-02-21</p>
+</div>
+
+<p>Created from a Kawai upright piano located in a living room. Thanks to Inma Martínez de Miguel for kindly letting us access to her home to play and record the piano, and Claudia Marín Martínez for her support the recording day.</p>
+
+<p>It was recorded by Gonzalo &lt;humanogonzalo@gmail.com&gt; and Roberto &lt;roberto@zenvoid.org&gt; on January 2017, using a Zoom H1 portable recorder mounted on a tripod in front of the piano, approximately at the place where the head of a piano player would be. The raw recordings were cropped, edited, and processed by Roberto, using free software programs. Bass notes contain loops.</p>
+
+<p>Published under the terms of the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 1.0</a> public domain dedication.</p>
+
+<audio controls>
+<source src="UprightPianoKW/demo.ogg" type="audio/ogg" />
+<source src="UprightPianoKW/demo.mp3" type="audio/mpeg" />
+<source src="UprightPianoKW/demo.wav" type="audio/wav" />
+</audio>
+
+<table class="download">
+<tr><th>Download</th><th>Format</th><th>Size</th><th>Comments</th></tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-SFZ+FLAC-20220221.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatFLAC">FLAC</span></td>
+<td>32MiB (32MiB)</td>
+<td>Best quality. Stereo. 2 velocity layers</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-SFZ-20220221.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatWAV">WAV</span></td>
+<td>69MiB (83MiB)</td>
+<td>Best quality. Stereo. 2 velocity layers</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-SF2-20220221.7z">Sound bank</a></td>
+<td><span class="formatSF2">SF2</span></td>
+<td>27MiB (56MiB)</td>
+<td>Best quality. Stereo. 2 velocity layers</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-SFZ+FLAC-20190703.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatFLAC">FLAC</span></td>
+<td>2.9MiB (3.3MiB)</td>
+<td>Small size</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-SFZ-20190703.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatWAV">WAV</span></td>
+<td>4.3MiB (10MiB)</td>
+<td>Small size</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-SF2-20190703.7z">Sound bank</a></td>
+<td><span class="formatSF2">SF2</span></td>
+<td>5.8MiB (10MiB)</td>
+<td>Small size</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-bright-SFZ+FLAC-20190703.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatFLAC">FLAC</span></td>
+<td>3.1MiB (3.4MiB)</td>
+<td>Small size. Bright sound variation</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-bright-SFZ-20190703.7z">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatWAV">WAV</span></td>
+<td>4.7MiB (10MiB)</td>
+<td>Small size. Bright sound variation</td>
+</tr>
+
+<tr>
+<td><a href="UprightPianoKW/UprightPianoKW-small-bright-SF2-20190703.7z">Sound bank</a></td>
+<td><span class="formatSF2">SF2</span></td>
+<td>6.0MiB (10MiB)</td>
+<td>Small size. Bright sound variation</td>
+</tr>
+
+</table>
+
+
+<h3 id="YamahaDisklavierPro">YDP Grand Piano</h3>
+
+<div class="remarks">
+<p>Version 2016-08-04</p>
+</div>
+
+<p>Built from the Zenph Studios Yamaha Disklavier Pro Piano Multisamples for <a href="https://en.wikipedia.org/wiki/One_Laptop_per_Child">OLPC</a>. The soundfont and modifications to the original sound samples are produced by roberto@zenvoid.org for the FreePats project.</p>
+
+<p>Samples from the <a href="http://wiki.laptop.org/go/Sound_samples">OLPC sound sample library</a> have been donated to <a href="http://www.csounds.com/boulanger/">Dr. Richard Boulanger @ cSounds.com</a> specifically to support the OLPC developers, students, XO users, and computer and electronic musicians everywhere.</p>
+
+<p>The Disklavier Pro has an internal electronically-controlled mechanism that allows it to play sounds with very precise specifications. The original sound samples were performed by computer and specifically recorded for OLPC by Dr. Mikhail Krishtal, Director of Music Research and Production, and his team at Zenph Studios. They are included in the OLPC sound sample library.</p>
+
+<p><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.</p>
+
+<audio controls>
+<source src="YDP-GrandPiano/demo.ogg" type="audio/ogg" />
+<source src="YDP-GrandPiano/demo.mp3" type="audio/mpeg" />
+<source src="YDP-GrandPiano/demo.wav" type="audio/wav" />
+</audio>
+
+<table class="download">
+<tr><th>Download</th><th>Format</th><th>Size</th></tr>
+
+<tr>
+<td><a href="YDP-GrandPiano/YDP-GrandPiano-SF2-20160804.tar.bz2">Sound bank</a></td>
+<td><span class="formatSF2">SF2</span></td>
+<td>36MiB</td>
+</tr>
+
+</table>
+
+
+<h3 id="SalamanderGrandPiano">Salamander Grand Piano</h3>
+
+<div class="remarks">
+<p>Version V3+2020-06-02</p>
+</div>
+
+<p>Yamaha C5, recorded with two AKG c414 disposed in an AB position ~12cm above the strings, 48kHz 24bit, 16 velocity layers. Sampled in minor thirds from the lowest A. Hammer noise releases chromatically sampled in one layer. String resonance releases in minor thirds in three layers.</p>
+
+<p>Author: Alexander Holm, axeldenstore (at) gmail (dot) com.</p>
+
+<p><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.</p>
+
+<table class="download">
+<tr><th>Download</th><th>Format</th><th>Size</th><th>Comments</th></tr>
+
+<tr>
+<td><a href="SalamanderGrandPiano/SalamanderGrandPiano-SFZ+FLAC-V3+20200602.tar.gz">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatFLAC">FLAC</span></td>
+<td>707MiB</td>
+<td>Best quality. 48kHz 24bit samples</td>
+</tr>
+
+<tr>
+<td><a href="SalamanderGrandPiano/SalamanderGrandPianoV3+20161209_48khz24bit.tar.xz">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatWAV">WAV</span></td>
+<td>1.18GiB</td>
+<td>Best quality. 48kHz 24bit samples</td>
+</tr>
+
+<tr>
+<td><a href="SalamanderGrandPiano/SalamanderGrandPianoV3+20161209_44khz16bit.tar.xz">Sound bank</a></td>
+<td><span class="formatSFZ">SFZ</span>&nbsp;<span class="formatWAV">WAV</span></td>
+<td>394MiB</td>
+<td>44.1kHz 16bit samples</td>
+</tr>
+
+<tr>
+<td><a href="SalamanderGrandPiano/SalamanderGrandPiano-SF2-V3+20200602.tar.xz">Sound bank</a></td>
+<td><span class="formatSF2">SF2</span></td>
+<td>296MiB</td>
+<td></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+<div id="footer">
+<p>freepats@zenvoid.org</p>
+</div>
+</body>
+</html>
+

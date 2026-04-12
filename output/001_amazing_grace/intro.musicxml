@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE score-partwise  PUBLIC "-//Recordare//DTD MusicXML 4.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
+<score-partwise version="4.0">
+  <movement-title>Music21 Fragment</movement-title>
+  <identification>
+    <creator type="composer">Music21</creator>
+    <encoding>
+      <encoding-date>2026-04-05</encoding-date>
+      <software>music21 v.9.9.1</software>
+    </encoding>
+  </identification>
+  <defaults>
+    <scaling>
+      <millimeters>7</millimeters>
+      <tenths>40</tenths>
+    </scaling>
+  </defaults>
+  <part-list>
+    <score-part id="P9b605f3063d97168e3ae7fa72b998ec1">
+      <part-name>Violin</part-name>
+      <part-abbreviation>Vln</part-abbreviation>
+      <score-instrument id="Ie2416c9762dcd3fb3d60c6a35448191d">
+        <instrument-name>Violin</instrument-name>
+        <instrument-abbreviation>Vln</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="Ie2416c9762dcd3fb3d60c6a35448191d">
+        <midi-channel>1</midi-channel>
+        <midi-program>41</midi-program>
+      </midi-instrument>
+    </score-part>
+    <score-part id="P68bf24b2706e417a0d0fa2cb764f9331">
+      <part-name>Cello</part-name>
+      <part-abbreviation>Vc</part-abbreviation>
+      <score-instrument id="I045ff84f59b5c616380e669fcf1e7f07">
+        <instrument-name>Cello</instrument-name>
+        <instrument-abbreviation>Vc</instrument-abbreviation>
+      </score-instrument>
+      <midi-instrument id="I045ff84f59b5c616380e669fcf1e7f07">
+        <midi-channel>2</midi-channel>
+        <midi-program>43</midi-program>
+      </midi-instrument>
+    </score-part>
+  </part-list>
+  <!--=========================== Part 1 ===========================-->
+  <part id="P9b605f3063d97168e3ae7fa72b998ec1">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1">
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>1</fifths>
+          <mode>major</mode>
+        </key>
+        <time>
+          <beats>3</beats>
+          <beat-type>4</beat-type>
+        </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+        </clef>
+      </attributes>
+      <direction>
+        <direction-type>
+          <metronome parentheses="no">
+            <beat-unit>quarter</beat-unit>
+            <per-minute>90</per-minute>
+          </metronome>
+        </direction-type>
+        <sound tempo="90" />
+      </direction>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>10080</duration>
+        <type>quarter</type>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2">
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>B</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note dynamics="111.11">
+        <pitch>
+          <step>B</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <barline location="right">
+        <bar-style>light-heavy</bar-style>
+      </barline>
+    </measure>
+  </part>
+  <!--=========================== Part 2 ===========================-->
+  <part id="P68bf24b2706e417a0d0fa2cb764f9331">
+    <!--========================= Measure 1 ==========================-->
+    <measure implicit="no" number="1">
+      <attributes>
+        <divisions>10080</divisions>
+        <key>
+          <fifths>1</fifths>
+          <mode>major</mode>
+        </key>
+        <time>
+          <beats>3</beats>
+          <beat-type>4</beat-type>
+        </time>
+        <clef>
+          <sign>F</sign>
+          <line>4</line>
+        </clef>
+      </attributes>
+      <direction>
+        <direction-type>
+          <words />
+        </direction-type>
+        <sound tempo="90" />
+      </direction>
+      <note>
+        <rest />
+        <duration>20160</duration>
+        <type>half</type>
+      </note>
+      <note>
+        <pitch>
+          <step>G</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>10080</duration>
+        <instrument id="I045ff84f59b5c616380e669fcf1e7f07" />
+        <type>quarter</type>
+      </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>G</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>10080</duration>
+        <instrument id="I045ff84f59b5c616380e669fcf1e7f07" />
+        <type>quarter</type>
+      </note>
+    </measure>
+    <!--========================= Measure 2 ==========================-->
+    <measure implicit="no" number="2">
+      <note>
+        <pitch>
+          <step>D</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>20160</duration>
+        <instrument id="I045ff84f59b5c616380e669fcf1e7f07" />
+        <type>half</type>
+      </note>
+      <note>
+        <chord />
+        <pitch>
+          <step>G</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>20160</duration>
+        <instrument id="I045ff84f59b5c616380e669fcf1e7f07" />
+        <type>half</type>
+      </note>
+      <note dynamics="111.11">
+        <pitch>
+          <step>G</step>
+          <octave>2</octave>
+        </pitch>
+        <duration>5040</duration>
+        <instrument id="I045ff84f59b5c616380e669fcf1e7f07" />
+        <type>eighth</type>
+      </note>
+      <note>
+        <rest />
+        <duration>5040</duration>
+        <type>eighth</type>
+      </note>
+      <barline location="right">
+        <bar-style>light-heavy</bar-style>
+      </barline>
+    </measure>
+  </part>
+</score-partwise>

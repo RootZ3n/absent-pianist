@@ -1,0 +1,768 @@
+{
+  "Amazing Grace": {
+    "url": "https://www.pateys.nf.ca/music/670_amazinggrace.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      16
+    ],
+    "refrain_measures": [
+      1,
+      16
+    ],
+    "source": "pateys"
+  },
+  "Holy Holy Holy": {
+    "url": "https://www.pateys.nf.ca/music/623_holyholyholy.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "What a Friend We Have in Jesus": {
+    "url": "https://www.pateys.nf.ca/music/746_whatafriendwehaveinjesus.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Blessed Assurance": {
+    "url": "https://www.pateys.nf.ca/music/687_blessedassurancejesusismine.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "It Is Well With My Soul": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "To God Be the Glory": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "A Mighty Fortress Is Our God": {
+    "url": "https://www.pateys.nf.ca/music/315_amightyfortressisourgod.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Abide With Me": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "How Firm a Foundation": {
+    "url": "https://www.pateys.nf.ca/music/685_howfirmafoundation.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Rock of Ages": {
+    "url": "https://www.pateys.nf.ca/music/240_rockofagescleftforme.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Come Thou Fount of Every Blessing": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "O Worship the King": {
+    "url": "https://www.pateys.nf.ca/music/174_worshipthelordinthebeautyofholiness.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Crown Him With Many Crowns": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Jesus Paid It All": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Nearer My God to Thee": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Softly and Tenderly": {
+    "url": "https://www.pateys.nf.ca/music/640_softlyandtenderly.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Just As I Am": {
+    "url": "https://www.pateys.nf.ca/music/682_justasiam.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Be Thou My Vision": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Fairest Lord Jesus": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "All Hail the Power of Jesus Name": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "O For a Thousand Tongues to Sing": {
+    "url": "https://www.pateys.nf.ca/music/464_othatihadathousandvoices.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "This Is My Fathers World": {
+    "url": "https://www.pateys.nf.ca/music/328_thisismyfathersworld.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Leaning on the Everlasting Arms": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "I Need Thee Every Hour": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "He Leadeth Me": {
+    "url": "https://www.pateys.nf.ca/music/650_heleadethme.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Trust and Obey": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Stand Up Stand Up for Jesus": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Onward Christian Soldiers": {
+    "url": "https://www.pateys.nf.ca/music/487_onwardchristiansoldiers.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Faith of Our Fathers": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "O Little Town of Bethlehem": {
+    "url": "https://www.pateys.nf.ca/music/165_olittletownofbethlehem.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Away in a Manger": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Joy to the World": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Hark the Herald Angels Sing": {
+    "url": "https://www.pateys.nf.ca/music/139_harktheheraldangelssing.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "O Come All Ye Faithful": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "The First Noel": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Silent Night": {
+    "url": "https://www.pateys.nf.ca/music/154_silentnight.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Christ the Lord Is Risen Today": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Up From the Grave He Arose": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Beneath the Cross of Jesus": {
+    "url": "https://www.pateys.nf.ca/music/238_beneaththecrossofjesus.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "My Faith Looks Up to Thee": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Take My Life and Let It Be": {
+    "url": "https://www.pateys.nf.ca/music/637_takemylife.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Sweet Hour of Prayer": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "In the Garden": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Jesus Loves Me": {
+    "url": "https://www.pateys.nf.ca/music/373_jesuslovesme.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Pass Me Not O Gentle Savior": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Rescue the Perishing": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "When the Roll Is Called Up Yonder": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "Shall We Gather at the River": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "I Surrender All": {
+    "url": "MISSING",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "O Sacred Head Now Wounded": {
+    "url": "https://www.pateys.nf.ca/music/239_osacredheadsorewounded.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  },
+  "There Is a Fountain": {
+    "url": "https://www.pateys.nf.ca/music/351_thereisafountain.mid",
+    "intro_measures": [
+      1,
+      2
+    ],
+    "verse_measures": [
+      1,
+      8
+    ],
+    "refrain_measures": [
+      9,
+      16
+    ]
+  }
+}
