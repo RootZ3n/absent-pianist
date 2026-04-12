@@ -15,6 +15,7 @@ import re
 import shutil
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 import mido
@@ -27,7 +28,7 @@ OUTPUT_DIR = BASE_DIR / "output"
 SOUNDFONT = BASE_DIR / "soundfont" / "Salamander.sf2"
 CACHE_DIR = BASE_DIR / ".cache"
 
-SECTIONS = ["intro", "verse", "refrain"]
+SECTIONS = ["intro", "single", "refrain"]
 
 
 def load_hymns():
@@ -254,6 +255,47 @@ def sanitize_split_midi(mid):
     return mid
 
 
+def apply_section_dynamics(mid, section_type):
+    """
+    Apply dynamics shaping to a MIDI based on section type.
+    - intro: slower tempo (80%% of original), softer notes (70%% velocity)
+    - single: normal tempo, normal velocity (no change)
+    - refrain: normal tempo, normal velocity (no change)
+    """
+    if section_type == "intro":
+        # Find original tempo and slow it down by 20%%
+        tempo = 500000  # default 120 BPM in microseconds
+        for track in mid.tracks:
+            abs_tick = 0
+            for msg in track:
+                abs_tick += msg.time
+                if msg.type == "set_tempo":
+                    tempo = msg.tempo
+                    break
+            break  # only check first track for global tempo
+        slower_tempo = int(tempo * 1.25)  # 25%% slower (longer microseconds per beat)
+        # Insert slowed tempo at the start of the first track with meta events
+        for track in mid.tracks:
+            has_tempo = any(msg.type == "set_tempo" for msg in track)
+            if has_tempo:
+                new_track = mido.MidiTrack()
+                new_track.append(mido.MetaMessage("set_tempo", tempo=slower_tempo, time=0))
+                for msg in track:
+                    if msg.type == "set_tempo":
+                        new_track.append(msg.copy(time=0))
+                    else:
+                        new_track.append(msg)
+                mid.tracks[mid.tracks.index(track)] = new_track
+                break
+        # Scale down note velocities
+        for track in mid.tracks:
+            for i, msg in enumerate(track):
+                if msg.type == "note_on" and msg.velocity > 0:
+                    track[i] = msg.copy(velocity=max(1, int(msg.velocity * 0.7)))
+    # single and refrain: no changes
+    return mid
+
+
 def split_midi(source_path, hymn_config, out_folder):
     """
     Split a source MIDI into intro, verse, refrain sections.
@@ -293,29 +335,35 @@ def split_midi(source_path, hymn_config, out_folder):
 
     results = {}
 
-    intro_mid = sanitize_split_midi(extract_section(mid, measures, intro_range[0], intro_range[1]))
+    # Intro: measures 1-2, slower tempo and softer dynamics
+    intro_mid = extract_section(mid, measures, intro_range[0], intro_range[1])
+    intro_mid = sanitize_split_midi(intro_mid)
+    intro_mid = apply_section_dynamics(intro_mid, "intro")
     intro_path = out_folder / "intro.mid"
     intro_mid.save(str(intro_path))
     results["intro"] = intro_path
 
+    # Single: full verse, normal dynamics
     if verse_range:
-        verse_mid = extract_section(mid, measures, verse_range[0], verse_range[1])
+        single_mid = extract_section(mid, measures, verse_range[0], verse_range[1])
     else:
-        verse_mid = mid
-    verse_mid = sanitize_split_midi(verse_mid)
-    verse_path = out_folder / "verse.mid"
-    verse_mid.save(str(verse_path))
-    results["verse"] = verse_path
+        single_mid = mid
+    single_mid = sanitize_split_midi(single_mid)
+    single_mid = apply_section_dynamics(single_mid, "single")
+    single_path = out_folder / "single.mid"
+    single_mid.save(str(single_path))
+    results["single"] = single_path
 
-    if refrain_range:
+    # Refrain: chorus section only — skip gracefully if no distinct chorus
+    if refrain_range and refrain_range != verse_range:
         refrain_mid = extract_section(mid, measures, refrain_range[0], refrain_range[1])
+        refrain_mid = sanitize_split_midi(refrain_mid)
+        refrain_mid = apply_section_dynamics(refrain_mid, "refrain")
+        refrain_path = out_folder / "refrain.mid"
+        refrain_mid.save(str(refrain_path))
+        results["refrain"] = refrain_path
     else:
-        half = total_measures // 2 + 1
-        refrain_mid = extract_section(mid, measures, half, total_measures)
-    refrain_mid = sanitize_split_midi(refrain_mid)
-    refrain_path = out_folder / "refrain.mid"
-    refrain_mid.save(str(refrain_path))
-    results["refrain"] = refrain_path
+        print(f"  SKIP refrain: no distinct chorus section (refrain_range={refrain_range}, verse_range={verse_range})")
 
     # Force Acoustic Grand Piano on all section MIDI files
     for section_path in results.values():
@@ -426,21 +474,32 @@ def process_hymn(index, name, sources, skip_wav=False):
         return False
 
     print("  Converting to MusicXML...")
-    for section in SECTIONS:
-        midi_path = folder / f"{section}.mid"
+    for section, midi_path in midi_files.items():
         xml_path = folder / f"{section}.musicxml"
-        if midi_path.exists():
-            midi_to_musicxml(midi_path, xml_path)
+        midi_to_musicxml(str(midi_path), str(xml_path))
 
     if skip_wav:
         print("  Skipping WAV generation (--skip-wav)")
     else:
         print("  Rendering WAV files...")
-        for section in SECTIONS:
-            midi_path = folder / f"{section}.mid"
+        for section, midi_path in midi_files.items():
             wav_path = folder / f"{section}.wav"
-            if midi_path.exists():
-                midi_to_wav(midi_path, wav_path)
+            midi_to_wav(str(midi_path), str(wav_path))
+
+    # Package all output files into a ZIP
+    print("  Creating ZIP archive...")
+    zip_name = f"{slugify(name)}.zip"
+    zip_path = folder / zip_name
+    with zipfile.ZipFile(str(zip_path), "w", zipfile.ZIP_DEFLATED) as zf:
+        for section, midi_path in midi_files.items():
+            zf.write(str(midi_path), midi_path.name)
+            xml_file = folder / f"{section}.musicxml"
+            if xml_file.exists():
+                zf.write(str(xml_file), xml_file.name)
+            wav_file = folder / f"{section}.wav"
+            if wav_file.exists():
+                zf.write(str(wav_file), wav_file.name)
+    print(f"  ZIP created: {zip_name}")
 
     return True
 
