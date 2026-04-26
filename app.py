@@ -19,6 +19,7 @@ from pathlib import Path
 from queue import Queue, Empty
 
 from flask import Flask, Response, jsonify, send_from_directory
+from generate import load_hymns
 
 BASE_DIR = Path(__file__).parent.resolve()
 HYMNS_FILE = BASE_DIR / "hymns.txt"
@@ -32,11 +33,6 @@ app = Flask(__name__)
 # One job at a time. Kevin doesn't need concurrency.
 current_job = {"running": False, "hymn": None, "progress": []}
 progress_queues: list[Queue] = []
-
-
-def load_hymns():
-    with open(HYMNS_FILE) as f:
-        return [line.strip() for line in f if line.strip()]
 
 
 def load_sources():

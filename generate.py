@@ -32,7 +32,7 @@ SECTIONS = ["intro", "single", "refrain"]
 
 
 def load_hymns():
-    """Load hymn list from hymns.txt, one per line."""
+    """Canonical hymn-list loader, shared with app.py."""
     with open(HYMNS_FILE) as f:
         return [line.strip() for line in f if line.strip()]
 
